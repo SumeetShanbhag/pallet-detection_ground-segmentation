@@ -18,29 +18,69 @@ It includes:
 
 ```
 ├── pallet_detection
-│   ├── configs/                # Dataset config YAML
-│   ├── dataset/                # (Removed from repo to reduce size)
-│   ├── requirements.txt        # Python dependencies
-│   ├── runs/                   # Training & inference results (YOLOv8)
-│   └── scripts/                # Training, evaluation, analysis scripts
+│   ├── configs
+│   │   └── dataset.yaml
+│   ├── dataset
+│   │   ├── test
+│   │   ├── train
+│   │   └── val
+│   ├── requirements.txt
+│   ├── runs
+│   │   ├── detect
+│   │   └── train
+│   ├── scripts
+│   │   ├── analysis.py
+│   │   ├── coco2yolo.py
+│   │   ├── detection_metrics.png
+│   │   ├── onnx_output.jpg
+│   │   ├── optimize_model.py
+│   │   ├── train_detectiom.py
+│   │   └── verify_onnx.py
+│   └── test.py
+└── segmentation
+|   ├── configs
+|   │   └── dataset.yaml
+|   ├── dataset
+|   │   ├── test
+|   │   ├── train
+|   │   └── val
+|   └── scripts
+|       ├── analysis.py
+|       ├── coco2yolo.py
+|       ├── inference.py
+|       ├── onnx_segmentation_output.jpg
+|       ├── optimize_model.py
+|       ├── runs
+|       ├── segmentation_metrics.png
+|       ├── train_segmentation.py
+|       └── verify_onnx.py
 │
-├── segmentation
-│   ├── configs/
-│   ├── dataset/
-│   ├── scripts/
-│   │   ├── train_segmentation.py
-│   │   ├── inference.py
-│   │   └── analysis.py
-│   └── runs/
-│       ├── train/              # Training metrics and graphs
-│       └── segment/           # Segmentation inference outputs
-│
-├── ros2_ws/
-│   └── src/
-│       ├── ground_segmentation_node/
-│       │   └── models/         # best.pt (segmentation)
-│       └── pallet_detection_node/
-│           └── models/         # best.pt (detection)
+├── ros2_ws_src
+│   ├── ground_segmentation_node
+│   │   ├── ground_segmentation_node
+│   │   │   ├── ground_segmenter.py
+│   │   │   └── __init__.py
+│   │   ├── models
+│   │   │   └── best.pt
+│   │   ├── package.xml
+│   │   ├── resource
+│   │   │   └── ground_segmentation_node
+│   │   ├── setup.cfg
+│   │   └── setup.py
+│   └── pallet_detection_node
+│       ├── launch
+│       │   └── pallet_detection_launch.py
+│       ├── models
+│       │   └── best.pt
+│       ├── package.xml
+│       ├── pallet_detection_node
+│       │   ├── __init__.py
+│       │   ├── __main__.py
+│       │   └── pallet_detector.py
+│       ├── resource
+│       │   └── pallet_detection_node
+│       ├── setup.cfg
+│       └── setup.py
 ```
 
 ## 📑 Table of Contents
