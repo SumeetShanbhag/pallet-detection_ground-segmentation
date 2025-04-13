@@ -1,0 +1,11 @@
+path: /home/sumeet/Downloads/segmentation/dataset
+train: train/images
+val: val/images
+test: test/images
+train_masks: train/labels
+val_masks: val/labels
+test_masks: test/labels
+names:
+  0: floor
+nc: 1
+task: segment

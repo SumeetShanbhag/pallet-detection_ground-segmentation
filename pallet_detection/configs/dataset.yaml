@@ -1,0 +1,6 @@
+# YOLO Dataset Configuration for Pallet Detection (1 class)
+
+train: /home/sumeet/Downloads/pallet_detection/dataset/train/images
+val: /home/sumeet/Downloads/pallet_detection/dataset/val/images
+nc: 1
+names: ['pallet']
