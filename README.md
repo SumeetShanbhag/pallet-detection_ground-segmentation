@@ -306,6 +306,9 @@ Below are the primary performance plots and metrics used to evaluate model robus
 #### 🔹 Training Metrics Over Epochs
 ![Training Results - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/results.png)
 
+#### 🔹 Inference Output
+Example output from the trained segmentation model:
+![Segmentation Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/segment/predict5/image_00000.jpg)
 
 
 ## Model Evaluation & Analysis
@@ -321,6 +324,10 @@ Run analysis to generate simplified performance plots:
 cd pallet_detection/scripts
 python3 analysis.py  # Generates detection_metrics.png
 ```
+
+#### 🔹 Inference Output
+Example output from the trained detection model:
+![Detection Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/detect/predict2/image_00000.jpg)
 
 #### Segmentation:
 ```bash
