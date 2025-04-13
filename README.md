@@ -35,7 +35,6 @@ It includes:
 │   │   ├── test
 │   │   ├── train
 │   │   └── val
-│   ├── requirements.txt
 │   ├── runs
 │   │   ├── detect
 │   │   └── train
@@ -92,6 +91,7 @@ It includes:
 │       │   └── pallet_detection_node
 │       ├── setup.cfg
 │       └── setup.py
+├── requirements.txt
 ```
   
 ## Installation Instructions
