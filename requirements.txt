@@ -1,0 +1,16 @@
+# Core dependencies
+torch
+torchvision
+ultralytics
+opencv-python
+pycocotools
+Pillow
+matplotlib
+pandas
+PyYAML
+
+# ROS2 dependencies (Python-side)
+rclpy
+cv_bridge
+sensor_msgs
+
