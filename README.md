@@ -375,7 +375,7 @@ Both are located under the [`ros2_ws/src/`](ros2_ws/src) directory and built usi
 - ROS 2 Humble
 - Python 3.10+
 - Required Python packages (see [requirements.txt](../requirements.txt))
-- `ultralytics` package must be installed in the Python environment accessible to ROS nodes
+- `ultralytics` and `opencv-python` must be installed in the Python environment accessible to ROS nodes:
 
 ```bash
 pip install ultralytics opencv-python
@@ -386,83 +386,101 @@ pip install ultralytics opencv-python
 ### Build the Workspace
 
 ```bash
-cd ros2_ws
+cd ~/ros2_ws
 colcon build
 source install/setup.bash
 ```
 
 ---
 
-### Running the Nodes
+### Inference Runtime Setup (Step-by-Step)
 
-Each node loads a trained YOLOv8 model and publishes output as a sensor_msgs/Image topic.
-
-#### Pallet Detection Node
+#### 1. Launch the ROS2 workspace
 
 ```bash
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+```
+
+#### 2. Open a new terminal: Launch Pallet Detection Node
+
+```bash
+cd ~/ros2_ws
+source install/setup.bash
 ros2 run pallet_detection_node pallet_detector
 ```
 
 Publishes inference results to:  
 `/pallet_detection`
 
-#### Ground Segmentation Node
+#### 3. Open another terminal: Launch Ground Segmentation Node
 
 ```bash
+cd ~/ros2_ws
+source install/setup.bash
 ros2 run ground_segmentation_node ground_segmenter
 ```
 
 Publishes segmentation output to:  
 `/ground_segmentation`
 
----
+#### 4. Open another terminal: Play the ROS bag file (replace with correct path if needed)
 
+```bash
+ros2 bag play ~/internship_assignment_sample_bag --loop
+```
+
+This will publish camera data to:  
+`/robot1/zed2i/left/image_rect_color`
+
+#### 5. Open another terminal: Launch `rqt_image_view` to visualize outputs
+
+```bash
+ros2 run rqt_image_view rqt_image_view
+```
+
+Once open, choose one of the following image topics to view:
+
+- `/pallet_detection` → View YOLOv8 pallet detection results
+- `/ground_segmentation` → View ground segmentation overlay
+- `/robot1/zed2i/left/image_rect_color` → Raw input stream from ROS bag
+
+---
 
 ### 1. `pallet_detection_node`
 
-📁 Location: `ros2_ws/src/pallet_detection_node`
+ Location: `ros2_ws/src/pallet_detection_node`
 
 **Features**:
-- Subscribes to RGB image topic (e.g., `/robot1/zed2i/left/image_rect_color`)
+- Subscribes to RGB image topic: `/robot1/zed2i/left/image_rect_color`
 - Publishes annotated detection results to `/pallet_detection`
-- Loads model from: `ros2_ws/src/pallet_detection_node/models/best.pt`
-
-Run it using:
-
-```bash
-ros2 run pallet_detection_node pallet_detector
-```
+- Loads YOLOv8 model from: `ros2_ws/src/pallet_detection_node/models/best.pt`
 
 ---
 
 ### 2. `ground_segmentation_node`
 
-📁 Location: `ros2_ws/src/ground_segmentation_node`
+ Location: `ros2_ws/src/ground_segmentation_node`
 
 **Features**:
-- Subscribes to RGB image topic
+- Subscribes to RGB image topic: `/robot1/zed2i/left/image_rect_color`
 - Runs ground segmentation using YOLOv8-seg
 - Publishes segmentation overlay to `/ground_segmentation`
-- Loads model from: `ros2_ws/src/ground_segmentation_node/models/best.pt`
-
-Run it using:
-
-```bash
-ros2 run ground_segmentation_node ground_segmenter
-```
+- Loads YOLOv8 model from: `ros2_ws/src/ground_segmentation_node/models/best.pt`
 
 ---
 
- Make sure to:
-- Place model weights at the respective `models/best.pt` locations.
-- Source your ROS2 workspace before running:
+**Note**:
+- Ensure model weights (`best.pt`) are placed correctly under each node's `models/` folder.
+- Source your workspace in every new terminal **before** running nodes or visualizers:
 
 ```bash
 source ~/ros2_ws/install/setup.bash
 ```
 
 
-## 📁 Folder Structure Reference
+## Folder Structure Reference
 
 ```
 .
