@@ -231,12 +231,12 @@ Both formats were converted from COCO using coco2yolo.py scripts in the `scripts
 
 ## Model Training
 
-### YOLOv8 Pallet Detection Training
+### YOLOv5 Pallet Detection Training
 
 Run the following command from the `pallet_detection` directory:
 
 ```bash
-yolo task=detect mode=train model=yolov8n.pt data=configs/dataset.yaml epochs=50 imgsz=640 batch=16 project=runs/train name=pallet_detection4
+yolo task=detect mode=train model=yolov5n.pt data=configs/dataset.yaml epochs=50 imgsz=640 batch=16 project=runs/train name=pallet_detection4
 ```
 
 - Uses bounding box annotations
@@ -247,7 +247,16 @@ yolo task=detect mode=train model=yolov8n.pt data=configs/dataset.yaml epochs=50
 Run from the `segmentation` directory:
 
 ```bash
-yolo task=segment mode=train model=yolov8n-seg.pt data=configs/dataset.yaml epochs=50 imgsz=640 batch=16 project=scripts/runs/train name=ground_segmentation5
+python3 train_segmentation.py \
+  --data ../configs/dataset.yaml \
+  --weights yolov8n-seg.pt \
+  --imgsz 640 \
+  --epochs 100 \
+  --batch_size 8 \
+  --project runs/train \
+  --run_name ground_segmentation \
+  --unlabeled_dir ../dataset/test/images \
+  --conf_thres 0.4
 ```
 
 - Uses polygonal segmentation masks
