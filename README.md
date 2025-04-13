@@ -89,12 +89,10 @@ It includes:
 - [Dataset Format](#dataset-format)
 - [Model Training](#model-training)
 - [Key Evaluation Visualizations](#key-evaluation-visualizations)
-- [Model Evaluation & Analysis](#model-evaluation--analysis)
+- [Model Evaluation, Metrics & Analysis](#model-evaluation--analysis)
 - [ROS2 Node Setup & Inference](#ros2-node-setup--inference)
 - [Ground Segmentation Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/ground_segmentation_node/models/best.pt)
 - [Pallet Detection Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
-- [📌 Pallet Detection Metrics](#pallet-detection-metrics)
-- [📌 Ground Segmentation Metrics](#ground-segmentation-metrics)
   
 ## Installation Instructions
 
@@ -330,7 +328,18 @@ cd pallet_detection/scripts
 python3 analysis.py  # Generates detection_metrics.png
 ```
 Ground Segmentation Performance Metrics
+---
 ![Segmentation Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/segmentation_metrics.png)
+
+---
+Pallet Detection Metrics
+---
+(from results.csv, epoch 50)
+
+- **Precision (B)**: `0.92575`
+- **Recall (B)**: `0.91715`
+- **mAP@0.5 (B)**: `0.96188`
+- **mAP@0.5:0.95 (B)**: `0.69506`
 
 ### Segmentation:
 ```bash
@@ -339,7 +348,18 @@ python3 analysis.py  # Generates segmentation_metrics.png
 ```
 
 Pallet Detection Performance Metrics:
+---
 ![Detection Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/scripts/detection_metrics.png)
+
+Ground Segmentation Metrics
+---
+(from results.csv, epoch 100)
+
+- **Precision (M)**: `0.92861`
+- **Recall (M)**: `0.82609`
+- **mAP@0.5 (M)**: `0.87897`
+- **mAP@0.5:0.95 (M) (IoU-based)**: `0.81067`
+
 
 These scripts parse `results.csv` and plot metrics across epochs.
 
