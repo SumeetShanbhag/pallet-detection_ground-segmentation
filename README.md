@@ -457,6 +457,9 @@ Once open, choose one of the following image topics to view:
 - Publishes annotated detection results to `/pallet_detection`
 - Loads YOLOv8 model from: `ros2_ws/src/pallet_detection_node/models/best.pt`
 
+/pallet_detection topic on ROS:
+---
+![Detection ROS](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/ROS_detection.png)
 ---
 
 ### 2. `ground_segmentation_node`
@@ -465,10 +468,12 @@ Once open, choose one of the following image topics to view:
 
 **Features**:
 - Subscribes to RGB image topic: `/robot1/zed2i/left/image_rect_color`
-- Runs ground segmentation using YOLOv8-seg
 - Publishes segmentation overlay to `/ground_segmentation`
 - Loads YOLOv8 model from: `ros2_ws/src/ground_segmentation_node/models/best.pt`
 
+/ground_segmentation topic on ROS:
+---
+![Segmentation ROS](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/ROS_segmentation.png)
 ---
 
 **Note**:
