@@ -129,6 +129,58 @@ colcon build
 source install/setup.bash
 ```
 
+## Dataset Preparation (Using Roboflow)
+
+This project uses warehouse image datasets annotated and preprocessed via [Roboflow](https://roboflow.com/) for both **pallet detection** and **ground segmentation** tasks.
+
+### Source Dataset Summary
+- **519 warehouse images** were initially provided.
+- An additional **654 warehouse images** were used *only for pallet detection*.
+
+---
+
+### Annotation Strategy
+
+#### Manual Annotation
+- **128 images** were **manually annotated** with:
+  - **Bounding boxes** for pallet detection
+  - **Polygon masks** for ground segmentation
+
+#### Auto Annotation
+- The **remaining images** from the 519-image dataset were **auto-annotated** using Roboflow's smart labeling tools.
+
+---
+
+### Dataset Composition
+
+#### Pallet Detection Dataset
+- Total dataset: **1,173 images**
+  - 128 manually annotated (from 519 original)
+  - Remaining 391 images auto-annotated
+  - Plus 654 images from an additional warehouse dataset
+- Steps:
+  1. Combined into a single dataset
+  2. Split into `train`, `val`, and `test` sets
+  3. Data **augmentation** done in Roboflow (e.g., flipping, brightness)
+  4. Exported in **COCO format**
+  5. Converted to **YOLOv8 format** using [`pallet_detection/scripts/coco2yolo.py`](pallet_detection/scripts/coco2yolo.py)
+
+####  Ground Segmentation Dataset
+- Total dataset: **519 images**
+  - 128 manually annotated
+  - Remaining 391 auto-annotated
+  - *Does not use* the 654 additional warehouse images
+- Steps:
+  1. Split into `train`, `val`, and `test`
+  2. Augmented in Roboflow
+  3. Exported in **COCO format**
+  4. Converted to **YOLOv8-seg format** using [`segmentation/scripts/coco2yolo.py`](segmentation/scripts/coco2yolo.py)
+
+---
+
+### 📁 Final Dataset Structure
+
+
 ## Dataset Format
 
 ### Detection Dataset Structure (YOLO format)
