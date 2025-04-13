@@ -14,7 +14,7 @@ It includes:
 - ROS2 launchable nodes for real-time inference
 - Model visualization and result comparison
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 ├── pallet_detection
@@ -83,7 +83,7 @@ It includes:
 │       └── setup.py
 ```
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Installation](#️-installation-instructions)
 - [Dataset Format](#dataset-format)
@@ -94,7 +94,7 @@ It includes:
 - [Ground Segmentation Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/ground_segmentation_node/models/best.pt)
 - [Pallet Detection Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
 
-## ⚙️ Installation Instructions
+## Installation Instructions
 
 ### 1. Clone the Repository
 
@@ -112,23 +112,6 @@ pip install -r requirements.txt
 ```
 
 > Note: This includes `ultralytics`, `opencv-python`, `numpy`, and `matplotlib`.
-
-### 3. (Optional) Install ROS 2 Dependencies
-
-If you plan to run the ROS2 nodes:
-
-- Ensure you have **ROS 2 Humble** installed and sourced:
-```bash
-source /opt/ros/humble/setup.bash
-```
-
-- Then build the workspace:
-
-```bash
-cd ros2_ws
-colcon build
-source install/setup.bash
-```
 
 ## Dataset Preparation (Using Roboflow)
 
