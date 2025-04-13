@@ -1,4 +1,4 @@
-# Pallet Detection & Ground Segmentation using YOLOv8 + ROS2
+# Pallet Detection & Ground Segmentation using YOLOv8 + ROS2 Node Deployment
 
 This repository presents an end-to-end pipeline combining computer vision and robotics:
 
@@ -8,7 +8,7 @@ This repository presents an end-to-end pipeline combining computer vision and ro
 
 It includes:
 
-- Dataset processing and format conversion scripts (COCO → YOLO)
+- Dataset processing and format conversion scripts (COCO.json → YOLO.txt)
 - Training pipelines for both detection and segmentation
 - Evaluation metrics (mAP, Precision, Recall, etc.)
 - ROS2 launchable nodes for real-time inference
