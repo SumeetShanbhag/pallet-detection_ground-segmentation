@@ -282,16 +282,28 @@ Below are the primary performance plots and metrics used to evaluate model robus
 
 ---
 
-### Pallet Detection
+###Pallet Detection
 
 #### 🔹 Precision-Recall Curve
-![PR Curve - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/PR_curve.png)
+![PR Curve - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/PR_curve.png) 
 
 #### 🔹 Confusion Matrix
-![Confusion Matrix - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/confusion_matrix.png)
+![Confusion Matrix - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/confusion_matrix.png) 
 
 #### 🔹 Training Metrics Over Epochs
 ![Training Results - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/results.png)
+
+#### 🔹 Final Evaluation Scores
+(from `results.csv`, epoch 50)
+
+- **Precision (B)**: `0.92575`
+- **Recall (B)**: `0.91715`
+- **mAP@0.5 (B)**: `0.96188`
+- **mAP@0.5:0.95 (B)**: `0.69506`
+
+#### 🔹 Inference Output
+Example output from the trained detection model:
+![Detection Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/detect/predict2/image_00000.jpg)
 
 ---
 
@@ -301,39 +313,47 @@ Below are the primary performance plots and metrics used to evaluate model robus
 ![PR Curve - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/MaskPR_curve.png)
 
 #### 🔹 Confusion Matrix
-![Confusion Matrix - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/confusion_matrix.png)
+![Confusion Matrix - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/confusion_matrix.png) 
 
 #### 🔹 Training Metrics Over Epochs
 ![Training Results - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/results.png)
+
+#### 🔹 Final Evaluation Scores
+(from `results.csv`, epoch 100)
+
+- **Precision (M)**: `0.92861`
+- **Recall (M)**: `0.82609`
+- **mAP@0.5 (M)**: `0.87897`
+- **mAP@0.5:0.95 (M)` (IoU-based)**: `0.81067`
 
 #### 🔹 Inference Output
 Example output from the trained segmentation model:
 ![Segmentation Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/segment/predict5/image_00000.jpg)
 
 
+
 ## Model Evaluation & Analysis
 
 Each training run outputs various metrics and visualizations inside the `runs/train/.../` folders.
 
-### Custom Analysis Scripts
-
 Run analysis to generate simplified performance plots:
 
-#### Detection:
+### Detection:
 ```bash
 cd pallet_detection/scripts
 python3 analysis.py  # Generates detection_metrics.png
 ```
+Ground Segmentation Performance Metrics
+![Segmentation Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/segmentation_metrics.png)
 
-#### 🔹 Inference Output
-Example output from the trained detection model:
-![Detection Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/detect/predict2/image_00000.jpg)
-
-#### Segmentation:
+### Segmentation:
 ```bash
 cd segmentation/scripts
 python3 analysis.py  # Generates segmentation_metrics.png
 ```
+
+Pallet Detection Performance Metrics:
+![Detection Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/scripts/detection_metrics.png)
 
 These scripts parse `results.csv` and plot metrics across epochs.
 
