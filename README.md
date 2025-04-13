@@ -93,7 +93,9 @@ It includes:
 - [ROS2 Node Setup & Inference](#ros2-node-setup--inference)
 - [Ground Segmentation Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/ground_segmentation_node/models/best.pt)
 - [Pallet Detection Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
-
+- [Pallet Detection Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
+- [Ground Segmentation Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
+  
 ## Installation Instructions
 
 ### 1. Clone the Repository
