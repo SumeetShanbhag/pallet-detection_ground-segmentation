@@ -83,15 +83,14 @@ It includes:
 │       └── setup.py
 ```
 
-## 📑 Table of Contents
+## 📚 Table of Contents
 
-- [Installation](#installation)
+- [Installation](#️-installation-instructions)
 - [Dataset Format](#dataset-format)
-- [Training Instructions](#training-instructions)
-- [Evaluation & Metrics](#evaluation--metrics)
-- [ROS2 Integration](#ros2-integration)
-- [Sample Results](#sample-results)
-- [License](#license)
+- [Model Training](#model-training)
+- [Key Evaluation Visualizations](#key-evaluation-visualizations)
+- [Model Evaluation & Analysis](#model-evaluation--analysis)
+- [ROS2 Node Setup & Inference](#ros2-node-setup--inference)
 
 ## ⚙️ Installation Instructions
 
