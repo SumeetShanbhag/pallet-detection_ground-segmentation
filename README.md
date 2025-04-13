@@ -343,6 +343,22 @@ These scripts parse `results.csv` and plot metrics across epochs.
 
 ---
 
+## Optional: Model Optimization for Edge Deployment
+
+As part of the assignment's optional optimization task, this project includes scripts that prepare the YOLOv8 models for deployment on edge devices like the NVIDIA Jetson AGX Orin.
+
+### Optimization and Verification Scripts
+
+#### Detection (Pallet Detection)
+- [optimize_model.py](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/scripts/optimize_model.py) — Converts the trained PyTorch model to ONNX and applies performance optimizations.
+- [verify_onnx.py](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/scripts/verify_onnx.py) — Verifies the ONNX model output matches the original PyTorch results.
+
+#### Segmentation (Ground Segmentation)
+- [optimize_model.py](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/optimize_model.py) — Converts the segmentation model to ONNX and optimizes it for inference.
+- [verify_onnx.py](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/verify_onnx.py) — Validates the accuracy of ONNX segmentation output.
+
+
+---
 ## ROS2 Node Setup & Inference
 
 This project includes two ROS 2 packages:
@@ -431,8 +447,10 @@ Once open, choose one of the following image topics to view:
 - `/robot1/zed2i/left/image_rect_color` → Raw input stream from ROS bag
 
 ---
+### ROS Runtime results
 
-### 1. `pallet_detection_node`
+---
+#### 1. `pallet_detection_node`
 
  Location: `ros2_ws/src/pallet_detection_node`
 
@@ -446,7 +464,7 @@ Once open, choose one of the following image topics to view:
 ![Detection ROS](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/ROS_detection.png)
 ---
 
-### 2. `ground_segmentation_node`
+#### 2. `ground_segmentation_node`
 
  Location: `ros2_ws/src/ground_segmentation_node`
 
