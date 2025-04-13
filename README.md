@@ -162,7 +162,7 @@ This project uses warehouse image datasets annotated and preprocessed via [Robof
 
 ---
 
-### 📁 Final Dataset Structure
+### Final Dataset Structure
 
 
 ## Dataset Format
@@ -268,16 +268,16 @@ Below are the primary performance plots and metrics used to evaluate model robus
 
 ###Pallet Detection
 
-#### 🔹 Precision-Recall Curve
+#### Precision-Recall Curve
 ![PR Curve - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/PR_curve.png) 
 
-#### 🔹 Confusion Matrix
+#### Confusion Matrix
 ![Confusion Matrix - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/confusion_matrix.png) 
 
-#### 🔹 Training Metrics Over Epochs
+#### Training Metrics Over Epochs
 ![Training Results - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/results.png)
 
-#### 🔹 Final Evaluation Scores
+#### Final Evaluation Scores
 (from `results.csv`, epoch 50)
 
 - **Precision (B)**: `0.92575`
@@ -285,7 +285,7 @@ Below are the primary performance plots and metrics used to evaluate model robus
 - **mAP@0.5 (B)**: `0.96188`
 - **mAP@0.5:0.95 (B)**: `0.69506`
 
-#### 🔹 Inference Output
+#### Inference Output
 Example output from the trained detection model:
 ![Detection Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/detect/predict2/image_00000.jpg)
 
@@ -293,24 +293,24 @@ Example output from the trained detection model:
 
 ### Ground Segmentation
 
-#### 🔹 Precision-Recall Curve (Segmentation Masks)
+#### Precision-Recall Curve (Segmentation Masks)
 ![PR Curve - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/MaskPR_curve.png)
 
-#### 🔹 Confusion Matrix
+#### Confusion Matrix
 ![Confusion Matrix - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/confusion_matrix.png) 
 
-#### 🔹 Training Metrics Over Epochs
+#### Training Metrics Over Epochs
 ![Training Results - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/results.png)
 
-#### 🔹 Final Evaluation Scores
+#### Final Evaluation Scores
 (from `results.csv`, epoch 100)
 
 - **Precision (M)**: `0.92861`
 - **Recall (M)**: `0.82609`
 - **mAP@0.5 (M)**: `0.87897`
-- **mAP@0.5:0.95 (M)` (IoU-based)**: `0.81067`
+- **mAP@0.5:0.95 (M) (IoU-based)**: `0.81067`
 
-#### 🔹 Inference Output
+#### Inference Output
 Example output from the trained segmentation model:
 ![Segmentation Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/segment/predict5/image_00000.jpg)
 
