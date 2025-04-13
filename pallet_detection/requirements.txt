@@ -1,6 +1,0 @@
-torch
-torchvision
-ultralytics
-opencv-python
-pycocotools
-Pillow
