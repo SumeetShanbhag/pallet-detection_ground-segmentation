@@ -93,8 +93,8 @@ It includes:
 - [ROS2 Node Setup & Inference](#ros2-node-setup--inference)
 - [Ground Segmentation Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/ground_segmentation_node/models/best.pt)
 - [Pallet Detection Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
-- [Pallet Detection Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
-- [Ground Segmentation Metrics](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
+- [📌 Pallet Detection Metrics](#pallet-detection-metrics)
+- [📌 Ground Segmentation Metrics](#ground-segmentation-metrics)
   
 ## Installation Instructions
 
@@ -279,8 +279,8 @@ Below are the primary performance plots and metrics used to evaluate model robus
 #### Training Metrics Over Epochs
 ![Training Results - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/results.png)
 
-#### Final Evaluation Scores
-(from `results.csv`, epoch 50)
+### 📌 Pallet Detection Metrics
+(from results.csv, epoch 50)
 
 - **Precision (B)**: `0.92575`
 - **Recall (B)**: `0.91715`
@@ -304,13 +304,13 @@ Example output from the trained detection model:
 #### Training Metrics Over Epochs
 ![Training Results - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/results.png)
 
-#### Final Evaluation Scores
-(from `results.csv`, epoch 100)
+### 📌 Ground Segmentation Metrics
+(from results.csv, epoch 100)
 
 - **Precision (M)**: `0.92861`
 - **Recall (M)**: `0.82609`
 - **mAP@0.5 (M)**: `0.87897`
-- **mAP@0.5:0.95 (M) (IoU-based)**: `0.81067`
+- **mAP@0.5:0.95 (M)` (IoU-based)**: `0.81067`
 
 #### Inference Output
 Example output from the trained segmentation model:
