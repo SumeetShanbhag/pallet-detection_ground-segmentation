@@ -14,6 +14,17 @@ It includes:
 - ROS2 launchable nodes for real-time inference
 - Model visualization and result comparison
 
+## Table of Contents
+
+- [Installation](#️-installation-instructions)
+- [Dataset Format](#dataset-format)
+- [Model Training](#model-training)
+- [Key Evaluation Visualizations](#key-evaluation-visualizations)
+- [Model Evaluation, Metrics & Analysis](#model-evaluation--analysis)
+- [ROS2 Node Setup & Inference](#ros2-node-setup--inference)
+- [Ground Segmentation Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/ground_segmentation_node/models/best.pt)
+- [Pallet Detection Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
+
 ## Directory Structure
 
 ```
@@ -82,17 +93,6 @@ It includes:
 │       ├── setup.cfg
 │       └── setup.py
 ```
-
-## Table of Contents
-
-- [Installation](#️-installation-instructions)
-- [Dataset Format](#dataset-format)
-- [Model Training](#model-training)
-- [Key Evaluation Visualizations](#key-evaluation-visualizations)
-- [Model Evaluation, Metrics & Analysis](#model-evaluation--analysis)
-- [ROS2 Node Setup & Inference](#ros2-node-setup--inference)
-- [Ground Segmentation Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/ground_segmentation_node/models/best.pt)
-- [Pallet Detection Model](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/ros2_ws_src/pallet_detection_node/models/best.pt)
   
 ## Installation Instructions
 
@@ -277,14 +277,6 @@ Below are the primary performance plots and metrics used to evaluate model robus
 #### Training Metrics Over Epochs
 ![Training Results - Detection](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/train/pallet_detection4/results.png)
 
-### 📌 Pallet Detection Metrics
-(from results.csv, epoch 50)
-
-- **Precision (B)**: `0.92575`
-- **Recall (B)**: `0.91715`
-- **mAP@0.5 (B)**: `0.96188`
-- **mAP@0.5:0.95 (B)**: `0.69506`
-
 #### Inference Output
 Example output from the trained detection model:
 ![Detection Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/pallet_detection/runs/detect/predict2/image_00000.jpg)
@@ -302,18 +294,9 @@ Example output from the trained detection model:
 #### Training Metrics Over Epochs
 ![Training Results - Segmentation](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/train/ground_segmentation5/results.png)
 
-### 📌 Ground Segmentation Metrics
-(from results.csv, epoch 100)
-
-- **Precision (M)**: `0.92861`
-- **Recall (M)**: `0.82609`
-- **mAP@0.5 (M)**: `0.87897`
-- **mAP@0.5:0.95 (M)` (IoU-based)**: `0.81067`
-
 #### Inference Output
 Example output from the trained segmentation model:
 ![Segmentation Output](https://github.com/SumeetShanbhag/pallet-detection_ground-segmentation/blob/main/segmentation/scripts/runs/segment/predict5/image_00000.jpg)
-
 
 
 ## Model Evaluation & Analysis
