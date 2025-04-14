@@ -16,7 +16,7 @@ It includes:
 
 ## Table of Contents
 
-- [Installation](#️-installation-instructions)
+- [Installation](#️installation-instructions)
 - [Dataset Format](#dataset-format)
 - [Model Training](#model-training)
 - [Key Evaluation Visualizations](#key-evaluation-visualizations)
